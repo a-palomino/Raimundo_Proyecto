@@ -42,7 +42,7 @@ function generarPDF(tipo, numFactura, fecha,cliente,direccionCliente,localidadCl
     doc.setFontSize(30);
     doc.text(tipo,19,20);
     doc.setDrawColor(255, 0, 0);
-    doc.text("[" + numFactura + "]",40,20);
+    doc.text("[" + numFactura + "]",80,20);
 
     doc.setFontSize(25);
     doc.text("RAIMUNDO SANTIAGO FERRERA",20,40);
@@ -51,7 +51,7 @@ function generarPDF(tipo, numFactura, fecha,cliente,direccionCliente,localidadCl
     doc.text(dni,20,50);
     doc.text(dirEmpresa,20,60);
 
-    doc.addImage("../media/", "JPEG",70,20);
+    //doc.addImage("../media/logo.jpeg", "JPEG",70,20);
     doc.line(19,70,200,70);
 
 
