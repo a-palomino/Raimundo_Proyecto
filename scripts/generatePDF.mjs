@@ -51,7 +51,7 @@ function generarPDF(tipo, numFactura, fecha,cliente,direccionCliente,localidadCl
     doc.text(dni,20,50);
     doc.text(dirEmpresa,20,60);
 
-    doc.addImage("../media/logo.jpeg", "JPEG",70,20);
+    //doc.addImage("../media/logo.jpeg", "JPEG",70,20);
     doc.line(19,70,200,70);
 
 
