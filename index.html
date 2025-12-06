@@ -13,6 +13,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.3/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
 
     <script src="scripts/index.mjs"></script>
     <script src="scripts/generatePDF.mjs"></script>
@@ -78,10 +79,10 @@
                                 <input type="text" name="descripcion1" id="descripcion1">
 
                                 <label for="cantidad1">Cantidad</label>
-                                <input type="number" name="cantidad1" id="cantidad1">
+                                <input type="number" name="cantidad1" id="cantidad1" min="1" value="1">
 
                                 <label for="precioUnidad1">Precio por unidad</label>
-                                <input type="number" name="precioUnidad1" id="precioUnidad1">
+                                <input type="number" name="precioUnidad1" id="precioUnidad1" min="0" value="0">
                             </div>
                             <!--Fin Concepto 1-->
 

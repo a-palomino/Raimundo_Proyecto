@@ -34,7 +34,7 @@ function crearNodoConcepto(){
     //names and id nodo
     let descripcionNodo = "descripcion" + (numConceptos+1);
     let cantidadNodo = "cantidad" + (numConceptos+1);
-    let precioNodo = "precio" + (numConceptos+1);
+    let precioNodo = "precioUnidad" + (numConceptos+1);
     let btnID = "eliminar" + (numConceptos+1);
     let nodoID = "nodo" + (numConceptos+1);
 
@@ -61,6 +61,8 @@ function crearNodoConcepto(){
     inputCantidad.setAttribute("type", "number");
     inputCantidad.setAttribute("name", cantidadNodo);
     inputCantidad.setAttribute("id", cantidadNodo);
+    inputCantidad.setAttribute("value", 1);
+    inputCantidad.setAttribute("min", 1);
 
     //Precio unidad
     let labelPrecio = document.createElement("label");
@@ -72,6 +74,8 @@ function crearNodoConcepto(){
     inputPrecio.setAttribute("type", "number");
     inputPrecio.setAttribute("name", precioNodo);
     inputPrecio.setAttribute("id", precioNodo);
+    inputPrecio.setAttribute("value", 0);
+    inputPrecio.setAttribute("min", 0);
 
     //Btn remove
     let btnEliminar = document.createElement("button");
