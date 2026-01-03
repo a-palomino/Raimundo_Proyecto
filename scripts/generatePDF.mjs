@@ -13,9 +13,10 @@ window.addEventListener("DOMContentLoaded", (event)=>{
         let dirCliente = document.getElementById("direccion").value;
         let localidadCliente = document.getElementById("localidad").value;
         let conceptos = datosConceptos();
+        let imagenLogo = document.getElementById("imgLogo");
 
         //Hacer función para obtener los datos de los conceptos creados
-        generarPDF(tipo,numFactura,fecha,cliente,dirCliente,localidadCliente,conceptos);
+        generarPDF(tipo,numFactura,fecha,cliente,dirCliente,localidadCliente,conceptos,imagenLogo);
     });
 });
 
@@ -34,7 +35,7 @@ let precioTotal = 0;
  * @param {String} localidadCliente 
  * @param {Array} conceptos 
  */
-function generarPDF(tipo, numFactura, fecha,cliente,direccionCliente,localidadCliente, conceptos){
+function generarPDF(tipo, numFactura, fecha,cliente,direccionCliente,localidadCliente, conceptos, imagenLogo){
     
     let dni = "80081036G";
     let dirEmpresa = "Dirección 06140 TALAVERA LA REAL (BADAJOZ)";
@@ -54,7 +55,7 @@ function generarPDF(tipo, numFactura, fecha,cliente,direccionCliente,localidadCl
     doc.text(dni,20,50);
     doc.text(dirEmpresa,20,60);
 
-    //doc.addImage("../media/logo.jpeg", "JPEG",70,20);
+    doc.addImage(imagenLogo, "JPEG",70,20, 100, 100);
     doc.setDrawColor(255, 0, 0);
     doc.line(19,70,200,70);
 
