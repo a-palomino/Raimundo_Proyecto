@@ -43,6 +43,7 @@ function crearNodoConcepto(){
     //Descripción
     let labelDescripcion = document.createElement("label");
     labelDescripcion.setAttribute("for",descripcionNodo);
+    labelDescripcion.setAttribute("class","form-label");
     let labelDescripcionText = document.createTextNode("Descripción");
     labelDescripcion.appendChild(labelDescripcionText);
 
@@ -50,10 +51,12 @@ function crearNodoConcepto(){
     inputDescripcion.setAttribute("type", "text");
     inputDescripcion.setAttribute("name", descripcionNodo);
     inputDescripcion.setAttribute("id", descripcionNodo);
+    inputDescripcion.setAttribute("class", "form-control");
 
     //Cantidad
     let labelCantidad = document.createElement("label");
     labelCantidad.setAttribute("for",cantidadNodo);
+    labelCantidad.setAttribute("class","form-label");
     let labelCantidadText = document.createTextNode("Cantidad");
     labelCantidad.appendChild(labelCantidadText);
 
@@ -63,10 +66,12 @@ function crearNodoConcepto(){
     inputCantidad.setAttribute("id", cantidadNodo);
     inputCantidad.setAttribute("value", 1);
     inputCantidad.setAttribute("min", 1);
+    inputCantidad.setAttribute("class", "form-control");
 
     //Precio unidad
     let labelPrecio = document.createElement("label");
     labelPrecio.setAttribute("for",precioNodo);
+    labelPrecio.setAttribute("class","form-label");
     let labelPrecioText = document.createTextNode("Precio por unidad");
     labelPrecio.appendChild(labelPrecioText);
 
@@ -76,6 +81,7 @@ function crearNodoConcepto(){
     inputPrecio.setAttribute("id", precioNodo);
     inputPrecio.setAttribute("value", 0);
     inputPrecio.setAttribute("min", 0);
+    inputPrecio.setAttribute("class", "form-control");
 
     //Btn remove
     let btnEliminar = document.createElement("button");
@@ -89,7 +95,7 @@ function crearNodoConcepto(){
     });
     //Div
     let divNodo = document.createElement("div");
-    divNodo.setAttribute("class", "mb-3");
+    divNodo.setAttribute("class", "col-md-12 border rounded-3 bg-body-secondary separacionConcepto");
     divNodo.setAttribute("id", nodoID);
 
     divNodo.appendChild(labelDescripcion);
