@@ -23,14 +23,18 @@
 
 <body>
     <main>
+        <div class="container">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <img class="text-center align-items-center mb-3 mb-md-0 me-md-auto" id="imgLogo" src="media/logo.jpeg" alt="Logo de la empresa" width="150px"
+                height="150px">
+                 <h1 class="text-center align-items-center mb-3 mb-md-0 me-md-auto mx-auto py-4">SANFER REFORMAS - PRESUPUESTOS Y FACTURAS</h1>
+                
+            </header>
+        </div>
 
-
-        <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="container col-xl-10 col-xxl-8 px-4 py-5 border border-color-red m-md-auto">
             <div class="row align-items-center g-lg-5 py-5">
 
-                <h1 class="text-center">SANFER REFORMAS - PRESUPUESTOS Y FACTURAS</h1>
-                <img class="text-center" id="imgLogo" src="media/logo.jpeg" alt="Logo de la empresa" width="100px"
-                    height="100px">
                 <h3 class="text-center">Rellena el formulario para generar un documento PDF</h3>
 
 
@@ -49,7 +53,8 @@
 
                             <div class="col-md-6 justify-self-center">
                                 <label for="numFactura" class="form-label">Numero de factura</label>
-                                <input type="text" name="numFactura" id="numFactura" placeholder="0000" value="0000" class="form-control">
+                                <input type="text" name="numFactura" id="numFactura" placeholder="0000" value="0000"
+                                    class="form-control">
                             </div>
 
 
@@ -61,7 +66,8 @@
 
                             <div class="col-md-6 align-self-center">
                                 <label for="cliente" class="form-label">Cliente</label>
-                                <input type="text" name="cliente" id="cliente" placeholder="Antonio..." value="Antonio" class="form-control">
+                                <input type="text" name="cliente" id="cliente" placeholder="Antonio..." value="Antonio"
+                                    class="form-control">
                             </div>
 
                             <div class="col-md-6 align-self-center">
@@ -82,17 +88,19 @@
                             </div>
 
                             <div class="col-md-12 align-self-center">
-                                <div class="conceptos col-md-12 align-self-center separacionConcepto" id="conceptos" >
+                                <div class="conceptos col-md-12 align-self-center separacionConcepto" id="conceptos">
                                     <!--Inicio Concepto1-->
                                     <div class="col-md-12 border rounded-3 bg-body-secondary separacionConcepto">
                                         <label for="descripcion1" class="form-label">Descripción</label>
                                         <input type="text" name="descripcion1" id="descripcion1" class="form-control">
 
                                         <label for="cantidad1" class="form-label">Cantidad</label>
-                                        <input type="number" name="cantidad1" id="cantidad1" min="1" value="1" class="form-control">
+                                        <input type="number" name="cantidad1" id="cantidad1" min="1" value="1"
+                                            class="form-control">
 
                                         <label for="precioUnidad1" class="form-label">Precio por unidad</label>
-                                        <input type="number" name="precioUnidad1" id="precioUnidad1" min="0" value="0" class="form-control">
+                                        <input type="number" name="precioUnidad1" id="precioUnidad1" min="0" value="0"
+                                            class="form-control">
                                     </div>
                                     <!--Fin Concepto 1-->
 
