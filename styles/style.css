@@ -6,3 +6,20 @@
 button{
     margin-top:15px;
 }
+
+h1{
+    color: rgb(155, 152, 152);
+}
+
+h1,h2,h3,h4{
+    font-style: italic;
+}
+
+h3{
+    color:aliceblue ;
+}
+
+.borde{
+    border-color: red;
+    border: 10px;
+}
