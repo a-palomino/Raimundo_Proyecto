@@ -79,7 +79,7 @@ function generarPDF(tipo, numFactura, fecha,cliente,direccionCliente,localidadCl
     
     doc.autoTable(headers,conceptos,{
     startY: 115,
-    columnStyles: {fillColor: [255,0,0]}
+    headStyles: {fillColor: [255,0,0]} 
 });
     posY = doc.lastAutoTable.finalY;
     doc.text("TOTAL",100,posY+10);
@@ -111,7 +111,8 @@ function datosConceptos(){
         let desc = document.getElementById(auxDes).value;
         let cantidad = document.getElementById(auxCan).value;
         let precio = document.getElementById(auxPre).value;
-        let total = parseFloat(cantidad) + parseFloat(precio);
+        let total = parseFloat(cantidad) * parseFloat(precio);
+        total = total.toFixed(2);
         subtotal += total;
         console
         let auxConcepto = [desc,cantidad,precio,total];
