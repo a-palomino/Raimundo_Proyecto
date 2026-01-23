@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", (event)=>{
 
 
 const {jsPDF} = window.jspdf;
-const doc = new jsPDF();
+
 let precioTotal = 0;
 
 /**
@@ -36,7 +36,8 @@ let precioTotal = 0;
  * @param {Array} conceptos 
  */
 function generarPDF(tipo, numFactura, fecha,cliente,direccionCliente,localidadCliente, conceptos, imagenLogo){
-    
+    //reiniciamos los valores del documento
+    const doc = new jsPDF();
     let dni = "80081036G";
     let dirEmpresa = "Dirección 06140 TALAVERA LA REAL (BADAJOZ)";
     let posX = 0;
@@ -112,15 +113,15 @@ function datosConceptos(){
         let cantidad = document.getElementById(auxCan).value;
         let precio = document.getElementById(auxPre).value;
         let total = parseFloat(cantidad) * parseFloat(precio);
-        total = total.toFixed(2);
+        //
         subtotal += total;
-        console
+        total = total.toFixed(2);
         let auxConcepto = [desc,cantidad,precio,total];
         conceptos.push(auxConcepto);
     }   
     
     let iva = (21 * subtotal) / 100;
-    precioTotal = subtotal + iva;
+    precioTotal = Number(subtotal + iva);
     precioTotal = precioTotal.toFixed(2);
     let auxSubtotal = ["","","Subtotal",subtotal.toFixed(2)];
     let auxIva = ["","","Iva 21%",iva.toFixed(2)];
