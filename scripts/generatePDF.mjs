@@ -12,7 +12,8 @@ window.addEventListener("DOMContentLoaded", (event)=>{
         let cliente = document.getElementById("cliente").value;
         let dirCliente = document.getElementById("direccion").value;
         let localidadCliente = document.getElementById("localidad").value;
-        let conceptos = datosConceptos();
+        let iva = document.getElementById("iva").value;
+        let conceptos = datosConceptos(iva);
         let imagenLogo = document.getElementById("imgLogo");
 
         //Hacer función para obtener los datos de los conceptos creados
@@ -86,7 +87,7 @@ function generarPDF(tipo, numFactura, fecha,cliente,direccionCliente,localidadCl
     doc.text("TOTAL",100,posY+10);
     doc.text(precioTotal.toString(),150,posY+10);
 
-    let namePDF = tipo + numFactura;
+    let namePDF =cliente + tipo + numFactura;
     doc.save(namePDF+ ".pdf");
 
 
@@ -96,7 +97,7 @@ function generarPDF(tipo, numFactura, fecha,cliente,direccionCliente,localidadCl
  * Devuelve un array con los valores de los conceptos
  * 0: Descripción; 1: Cantidad; 2:Precio
  */
-function datosConceptos(){
+function datosConceptos(ivaForm){
     let nodeConceptos = document.getElementById("conceptos");
     let divsConceptos = nodeConceptos.querySelectorAll("div");
     let numConceptos = divsConceptos.length;
@@ -120,11 +121,11 @@ function datosConceptos(){
         conceptos.push(auxConcepto);
     }   
     
-    let iva = (21 * subtotal) / 100;
+    let iva = (ivaForm * subtotal) / 100;
     precioTotal = Number(subtotal + iva);
     precioTotal = precioTotal.toFixed(2);
     let auxSubtotal = ["","","Subtotal",subtotal.toFixed(2)];
-    let auxIva = ["","","Iva 21%",iva.toFixed(2)];
+    let auxIva = ["","",`Iva ${iva}%`,iva.toFixed(2)];
     
     conceptos.push(auxSubtotal);
     conceptos.push(auxIva);

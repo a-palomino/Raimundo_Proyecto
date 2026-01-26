@@ -26,15 +26,15 @@
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
             <div class="justify-content-beetwen">
                 <img class=" mb-3 mb-md-0 me-md-auto" id="imgLogo" src="media/logo.jpeg" alt="Logo de la empresa"
-                width="100px" height="100px" draggable="false">
+                    width="100px" height="100px" draggable="false">
             </div>
-            
+
             <h1 class="text-center mb-3 mb-md-0  mx-auto py-4">SANFER REFORMAS -
                 PRESUPUESTOS Y FACTURAS</h1>
         </header>
     </div>
 
-    <main >
+    <main>
 
         <div class="container col-xl-10 col-xxl-8 px-4 py-5  m-md-auto m-auto">
             <div class="row align-items-center g-lg-5 py-5">
@@ -47,12 +47,18 @@
                         <div class="row g-3">
 
                             <!--ROWS FORM-->
-                            <div class="col-md-8 justify-self-center">
+                            <div class="col-md-6 justify-self-center">
                                 <label for="tipoDoc" class="form-label">Selecciona el tipo de Documento</label>
                                 <select name="tipoDoc" id="tipoDoc" class="form-select">
                                     <option value="Presupuesto">Presupuesto</option>
                                     <option value="Factura">Factura</option>
                                 </select>
+                            </div>
+
+                            <div class="col-md-6 justify-self-center">
+                                <label for="iva" class="form-label">Iva de facturación</label>
+                                <input type="number" name="iva" id="iva" min="0" value="21"
+                                    class="form-control">
                             </div>
 
                             <div class="col-md-6 justify-self-center">
@@ -70,25 +76,25 @@
 
                             <div class="col-md-6 align-self-center">
                                 <label for="cliente" class="form-label">Cliente</label>
-                                <input type="text" name="cliente" id="cliente" placeholder="Antonio..." value="Antonio"
+                                <input type="text" name="cliente" id="cliente" placeholder="Antonio..." value=""
                                     class="form-control">
                             </div>
 
                             <div class="col-md-6 align-self-center">
                                 <label for="direccion" class="form-label">Dirección</label>
                                 <input type="text" name="direccion" id="direccion" placeholder="Avda. El baden, 19..."
-                                    value="Avda. El baden, 19" class="form-control">
+                                    value="" class="form-control">
                             </div>
 
                             <div class="col-md-8 align-self-center">
                                 <label for="localidad" class="form-label">Localidad y Municipio</label>
                                 <input type="text" name="localidad" id="localidad"
                                     placeholder="Talavera la real, 06140(Badajoz)..."
-                                    value="Talavera la real, 06140(Badajoz)" class="form-control">
+                                    value="" class="form-control">
                             </div>
 
-                            <div class="col-md-12 align-self-center">
-                                <h4>Introduce los conceptos del presupuesto</h4>
+                            <div class="col-md-12 align-self-center py-4">
+                                <h4 class="text-center">Introduce los conceptos del presupuesto</h4>
                             </div>
 
                             <div class="col-md-12 align-self-center">
@@ -128,9 +134,9 @@
 
     <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 bg-danger">
         <div class="col-md-4 d-flex align-items-center justify-content-center m-4">
-            <span class="mb-3 mb-md-0 text-body-secondary">©SANFER-REFORMAS Gestión de presupuestos y facturas</span>
+            <span class="mb-3 mb-md-0 textoLayout">©SANFER-REFORMAS Gestión de presupuestos y facturas</span>
         </div>
-               
+
     </footer>
 </body>
 
