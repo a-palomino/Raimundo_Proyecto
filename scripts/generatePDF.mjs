@@ -85,7 +85,17 @@ function generarPDF(tipo, numFactura, fecha,cliente,direccionCliente,localidadCl
 });
     posY = doc.lastAutoTable.finalY;
     doc.text("TOTAL",100,posY+10);
-    doc.text(precioTotal.toString(),150,posY+10);
+    doc.text(`${precioTotal.toString()}€`,150,posY+10);
+
+    //Firmas del cliente
+    posY += 50;
+    doc.setDrawColor(0, 0, 0);
+    doc.text("Firma del cliente",20,posY);
+    doc.rect(20, posY+5, 75, 25); // x=20, y=30, ancho=100, alto=50
+
+    doc.text("Firma de la empresa",115,posY);
+    doc.rect(115, posY+5, 75, 25); // x=20, y=30, ancho=100, alto=50
+
 
     let namePDF =cliente + tipo + numFactura;
     doc.save(namePDF+ ".pdf");
@@ -125,7 +135,7 @@ function datosConceptos(ivaForm){
     precioTotal = Number(subtotal + iva);
     precioTotal = precioTotal.toFixed(2);
     let auxSubtotal = ["","","Subtotal",subtotal.toFixed(2)];
-    let auxIva = ["","",`Iva ${iva}%`,iva.toFixed(2)];
+    let auxIva = ["","",`Iva ${iva.toFixed(2)}%`,iva.toFixed(2)];
     
     conceptos.push(auxSubtotal);
     conceptos.push(auxIva);
