@@ -135,7 +135,7 @@ function datosConceptos(ivaForm){
     precioTotal = Number(subtotal + iva);
     precioTotal = precioTotal.toFixed(2);
     let auxSubtotal = ["","","Subtotal",subtotal.toFixed(2)];
-    let auxIva = ["","",`Iva ${iva.toFixed(2)}%`,iva.toFixed(2)];
+    let auxIva = ["","",`Iva ${ivaForm}%`,iva.toFixed(2)];
     
     conceptos.push(auxSubtotal);
     conceptos.push(auxIva);
