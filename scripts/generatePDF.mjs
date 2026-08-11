@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", (event)=>{
         console.log(numFactura);
         let fecha = document.getElementById("fecha").value;
         let cliente = document.getElementById("cliente").value;
+        let dniCliente = document.getElementById("dniCliente").value;
         let dirCliente = document.getElementById("direccion").value;
         let localidadCliente = document.getElementById("localidad").value;
         let iva = document.getElementById("iva").value;
@@ -17,7 +18,7 @@ window.addEventListener("DOMContentLoaded", (event)=>{
         let imagenLogo = document.getElementById("imgLogo");
 
         //Hacer función para obtener los datos de los conceptos creados
-        generarPDF(tipo,numFactura,fecha,cliente,dirCliente,localidadCliente,conceptos,imagenLogo);
+        generarPDF(tipo,numFactura,fecha,cliente,dniCliente,dirCliente,localidadCliente,conceptos,imagenLogo);
     });
 });
 
@@ -32,15 +33,16 @@ let precioTotal = 0;
  * @param {String} numFactura
  * @param {String} fecha 
  * @param {String} cliente 
+ * @param {String} dniCliente
  * @param {String} direccionCliente 
  * @param {String} localidadCliente 
  * @param {Array} conceptos 
  */
-function generarPDF(tipo, numFactura, fecha,cliente,direccionCliente,localidadCliente, conceptos, imagenLogo){
+function generarPDF(tipo, numFactura, fecha,cliente,dniCliente,direccionCliente,localidadCliente, conceptos, imagenLogo){
     //reiniciamos los valores del documento
     const doc = new jsPDF();
     let dni = "80081036G";
-    let dirEmpresa = "Dirección 06140 TALAVERA LA REAL (BADAJOZ)";
+    let dirEmpresa = "C/ Muralla 73-A, 06140 TALAVERA LA REAL (BADAJOZ)";
     let posX = 0;
     let posY = 0;
 
@@ -57,7 +59,7 @@ function generarPDF(tipo, numFactura, fecha,cliente,direccionCliente,localidadCl
     doc.text(dni,20,50);
     doc.text(dirEmpresa,20,60);
 
-    doc.addImage(imagenLogo, "JPEG",125,30, 30,30);
+    doc.addImage(imagenLogo, "JPEG",145,30, 30,30);
     doc.setDrawColor(255, 0, 0);
     doc.line(19,70,200,70);
 
@@ -70,7 +72,7 @@ function generarPDF(tipo, numFactura, fecha,cliente,direccionCliente,localidadCl
     doc.setTextColor(255, 0, 0);
     doc.text("Para", 70,80);
     doc.setTextColor(0, 0, 0);
-    doc.text(cliente,70,85);
+    doc.text(`${cliente} (${dniCliente})`,70,85);
     doc.text(direccionCliente,70,90);
     doc.text(localidadCliente,70,95);
 
